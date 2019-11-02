@@ -11,4 +11,6 @@ class Book(models.Model):
     title = models.TextField()
     description = models.TextField()
     year_release = models.SmallIntegerField()
+    copy_count = models.SmallIntegerField(default=1)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     author = models.ForeignKey(Author, on_delete = models.CASCADE)
