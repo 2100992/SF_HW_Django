@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h3>добро пожаловать в {{ title }}.</h3>
+    <p>Тут собрано {{ books|length }} книг из моей коллекции.</p>
+    <table border="1">
+    <tr>
+    
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.ISBN }}</td>
+        <td>{{ book.description }}</td>
+        <td>{{ book.year_release }}</td>
+        <td>{{ book.author.full_name }}</td>
+        <td>{{ book.author.country }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
